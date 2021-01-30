@@ -9,6 +9,13 @@ def login(request):
 
 def register(request):
     return render(request, 'registration.html')
+
+def main(request):
+    this_user = User.objects.get(id = request.session['user_id'])
+    context = {
+        'user' : this_user,
+    }
+    return render(request, 'main.html', context)
 ############# LANDING PAGES #############################
 ############# REGISTER & LOGIN ##########################
 def register_user(request):
@@ -18,15 +25,15 @@ def register_user(request):
     if len(errors) > 0:
         for value in errors.values():
             messages.error(request, value)
-        return redirect('/')
+        return redirect('/register')
     pw_hash = bcrypt.hashpw(request.POST['pword'].encode(), bcrypt.gensalt()).decode()
     new_user = User.objects.create(
-        user_name = request.POST['first_name'],
+        user_name = request.POST['user_name'],
         email = request.POST['email'],
         password = pw_hash,
     )
     request.session['user_id'] = new_user.id
-    return redirect('/menu')
+    return redirect('/main')
 
 def login_user(request):
     if request.method == 'GET':
@@ -35,10 +42,10 @@ def login_user(request):
     if len(errors) > 0:
         for value in errors.values():
             messages.error(request, value)
-        return redirect('/login')
+        return redirect('/')
     user = User.objects.get(email = request.POST['email'])
     request.session['user_id'] = user.id
-    return redirect('/menu')
+    return redirect('/main')
 
 def logout(request):
     request.session.flush()
