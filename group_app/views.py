@@ -6,6 +6,9 @@ from .models import User
 ############# LANDING PAGES #############################
 def login(request):
     return render(request, 'login.html')
+
+def register(request):
+    return render(request, 'registration.html')
 ############# LANDING PAGES #############################
 ############# REGISTER & LOGIN ##########################
 def register_user(request):
