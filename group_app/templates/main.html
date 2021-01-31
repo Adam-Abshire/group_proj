@@ -13,7 +13,8 @@
     <h5>{{ user.email }}</h5>
     <h5>{{ user.created_at|date:"M d, Y" }}</h5>
     <h5>Gold: </h5>
-    <a href="/logout">Logout</a>
+    <a href="/logout">Logout</a> <br>
+    <a href="{% url 'game_page' %}">Go To Game Page</a>
 </body>
 
 </html>

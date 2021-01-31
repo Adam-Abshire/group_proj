@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Page</title>
+    {% load static %}
+</head>
+
+<body>
+    <div id="image">
+        <img src="{% static 'element.png' %}" alt="">
+    </div>
+
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div {% if message.tags %} class="alert alert-sm alert-{{ message.tags }}" {% endif %}> <br>
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <br>
+    <div class="container">
+        <form action="/user_choice" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Metal" name="choice">
+            <input type="submit" value="Earth" name="choice">
+            <input type="submit" value="Water" name="choice">
+            <input type="submit" value="Fire" name="choice">
+            <input type="submit" value="Wood" name="choice">
+        </form>
+    </div>
+    <br>
+    <a href="/main">Return to Main</a>
+</body>
+
+</html>
