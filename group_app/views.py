@@ -82,7 +82,10 @@ def user_choice(request):
             messages.success(request, 'Metal Beats Wood, you win :)')
             return redirect('game_page')
         if computer == "Fire":
-            messages.success(request, 'Fire Beats Metal, you lose :(')
+            messages.error(request, 'Fire Beats Metal, you lose :(')
+            return redirect('game_page')
+        if computer == "Water":
+            messages.error(request, 'Metal lose to Water, you lose :(')
             return redirect('game_page')
         else:
             messages.success(request, 'No winner this round!!')
@@ -92,7 +95,10 @@ def user_choice(request):
             messages.success(request, 'Earth Beats Water, you win :)')
             return redirect('game_page')
         if computer == "Wood":
-            messages.success(request, 'Wood Beats Earth, you lose :(')
+            messages.error(request, 'Wood Beats Earth, you lose :(')
+            return redirect('game_page')
+        if computer == "Metal":
+            messages.error(request, 'Earth lose to Metal, you lose :(')
             return redirect('game_page')
         else:
             messages.success(request, 'No winner this round!!')
@@ -102,7 +108,10 @@ def user_choice(request):
             messages.success(request, 'Water Beats Fire, you win :)')
             return redirect('game_page')
         if computer == "Earth":
-            messages.success(request, 'Earth Beats Water, you lose :(')
+            messages.error(request, 'Earth Beats Water, you lose :(')
+            return redirect('game_page')
+        if computer == "Wood":
+            messages.error(request, 'Water lose to Wood, you lose :(')
             return redirect('game_page')
         else:
             messages.success(request, 'No winner this round!!')
@@ -112,7 +121,10 @@ def user_choice(request):
             messages.success(request, 'Fire Beats Metal, you win :)')
             return redirect('game_page')
         if computer == "Water":
-            messages.success(request, 'Water Beats Fire, you lose :(')
+            messages.error(request, 'Water Beats Fire, you lose :(')
+            return redirect('game_page')
+        if computer == "Earth":
+            messages.error(request, 'Fire lose to Earth, you lose :(')
             return redirect('game_page')
         else:
             messages.success(request, 'No winner this round!!')
@@ -122,7 +134,10 @@ def user_choice(request):
             messages.success(request, 'Wood Beats Earth, you win :)')
             return redirect('game_page')
         if computer == "Metal":
-            messages.success(request, 'Metal Beats Wood, you lose :(')
+            messages.error(request, 'Metal Beats Wood, you lose :(')
+            return redirect('game_page')
+        if computer == "Fire":
+            messages.error(request, 'Wood lose to Fire, you lose :(')
             return redirect('game_page')
         else:
             messages.success(request, 'No winner this round!!')

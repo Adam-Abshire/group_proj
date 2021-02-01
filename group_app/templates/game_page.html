@@ -1,40 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Page</title>
     {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Game Page</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+
+    <link rel="stylesheet" href="{% static 'cover.css' %}">
+
 </head>
 
-<body>
-    <div id="image">
-        <img src="{% static 'element.png' %}" alt="">
+<body class="text-center">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link" href="{% url 'main' %}">Home</a>
+                    <a class="nav-link active" href="{% url 'game_page' %}">Game Page</a>
+                </nav>
+            </div>
+        </header>
+
+
+
+        <main role="main" class="inner cover">
+            <p class="lead">
+                <img src="{% static 'element.png' %}" alt="" width=70%>
+            </p>
+            <h1 class="cover-heading">Welcome to the Game Page</h1>
+            <p class="lead">Pick an Element Against the Computer!</p> <br>
+
+
+            {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <div {% if message.tags %} class="alert alert-sm alert-{{ message.tags }}" {% endif %}>
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="container">
+                <form action="/user_choice" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" class="btn btn-lg btn-secondary" value="Metal" name="choice">
+                    <input type="submit" class="btn btn-lg btn-secondary" value="Earth" name="choice">
+                    <input type="submit" class="btn btn-lg btn-secondary" value="Water" name="choice">
+                    <input type="submit" class="btn btn-lg btn-secondary" value="Fire" name="choice">
+                    <input type="submit" class="btn btn-lg btn-secondary" value="Wood" name="choice">
+                </form>
+            </div>
+        </main>
+
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            </div>
+        </footer>
     </div>
 
-    {% if messages %}
-    <div class="messages">
-        {% for message in messages %}
-        <div {% if message.tags %} class="alert alert-sm alert-{{ message.tags }}" {% endif %}> <br>
-            {{ message }}
-        </div>
-        {% endfor %}
-    </div>
-    {% endif %}
-    <br>
-    <div class="container">
-        <form action="/user_choice" method="POST">
-            {% csrf_token %}
-            <input type="submit" value="Metal" name="choice">
-            <input type="submit" value="Earth" name="choice">
-            <input type="submit" value="Water" name="choice">
-            <input type="submit" value="Fire" name="choice">
-            <input type="submit" value="Wood" name="choice">
-        </form>
-    </div>
-    <br>
-    <a href="/main">Return to Main</a>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
+    </script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
