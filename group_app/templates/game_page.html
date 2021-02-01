@@ -41,30 +41,53 @@
                 <img src="{% static 'element.png' %}" alt="" width=70%>
             </p>
             <h1 class="cover-heading">Welcome to the Game Page</h1>
-            <p class="lead">Pick an Element Against the Computer!</p> <br>
+            <p class="lead mt-3">Pick an Amount to Bet. Your Current Gold: {{ user.gold }}</p>
 
+            <form action="/user_choice" method="POST">
+                {% csrf_token %}
 
-            {% if messages %}
-            <div class="messages">
-                {% for message in messages %}
-                <div {% if message.tags %} class="alert alert-sm alert-{{ message.tags }}" {% endif %}>
-                    {{ message }}
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="bet_amount" value="10" checked="checked">
+                    <label class="form-check-label">10</label>
                 </div>
-                {% endfor %}
-            </div>
-            {% endif %}
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="bet_amount" value="50">
+                    <label class="form-check-label">50</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="bet_amount" value="100">
+                    <label class="form-check-label">100</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="bet_amount" value="500">
+                    <label class="form-check-label">500</label>
+                </div>
 
-            <div class="container">
-                <form action="/user_choice" method="POST">
-                    {% csrf_token %}
-                    <input type="submit" class="btn btn-lg btn-secondary" value="Metal" name="choice">
-                    <input type="submit" class="btn btn-lg btn-secondary" value="Earth" name="choice">
-                    <input type="submit" class="btn btn-lg btn-secondary" value="Water" name="choice">
-                    <input type="submit" class="btn btn-lg btn-secondary" value="Fire" name="choice">
-                    <input type="submit" class="btn btn-lg btn-secondary" value="Wood" name="choice">
-                </form>
-            </div>
+                <p class="lead mt-3">Pick an Element Against the Computer!</p> <br>
+
+
+                {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                    <div {% if message.tags %} class="alert alert-sm alert-{{ message.tags }}" {% endif %}>
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+
+
+                <input type="submit" class="btn btn-lg btn-secondary" value="Metal" name="choice">
+                <input type="submit" class="btn btn-lg btn-secondary" value="Earth" name="choice">
+                <input type="submit" class="btn btn-lg btn-secondary" value="Water" name="choice">
+                <input type="submit" class="btn btn-lg btn-secondary" value="Fire" name="choice">
+                <input type="submit" class="btn btn-lg btn-secondary" value="Wood" name="choice">
+            </form>
+
         </main>
+
+
 
         <footer class="mastfoot mt-auto">
             <div class="inner">
