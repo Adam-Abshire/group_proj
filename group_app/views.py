@@ -10,7 +10,6 @@ from random import randint
 def login(request):
     return render(request, 'login.html')
 
-
 def register(request):
     return render(request, 'registration.html')
 
@@ -21,10 +20,16 @@ def main(request):
         'user': this_user,
     }
     return render(request, 'main.html', context)
+
+def user_info(request, member_id):
+    this_user = User.objects.get(id = member_id)
+    context = {
+        'user': this_user,
+    }
+    return render(request, 'user_info.html', context)
+
 ############# LANDING PAGES #############################
 ############# REGISTER & LOGIN ##########################
-
-
 def register_user(request):
     if request.method == 'GET':
         return redirect('/')
@@ -60,9 +65,13 @@ def login_user(request):
 def logout(request):
     request.session.flush()
     return redirect('/')
+
+def edit_user_avatar(request, member_id):
+    this_user = User.objects.get(id=member_id)
+    this_user.avatar = request.POST['avatar']
+    this_user.save()
+    return redirect(f'/user_info/{member_id}')
 ############# REGISTER & LOGIN ##########################
-
-
 def game_page(request):
     this_user = User.objects.get(id=request.session['user_id'])
     context = {
@@ -70,6 +79,8 @@ def game_page(request):
     }
     return render(request, 'game_page.html', context)
 
+def about_page(request):
+    return render(request, 'about_page.html')
 
 def user_choice(request):
     list = ["Metal", "Earth", "Water", "Fire", "Wood"]
