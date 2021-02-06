@@ -24,23 +24,64 @@
 </head>
 
 <body>
-    <div>
-        <ul>
-            <li><button class="button-circle button-wood"><img src="{% static 'wood_edit.jpg' %}" alt="wood_edit">
-            </button></li>
-            <li><button class="button-circle button-fire"><img src="{% static 'fire_edit.jpg' %}" alt="fire_edit">
-            </button></li>
-            <li><button class="button-circle button-earth"><img src="{% static 'earth_edit.jpg' %}" alt="earth_edit">
-            </button></li>
-            <li><button class="button-circle button-metal"><img src="{% static 'metal_edit.jpg' %}" alt="metal_edit">
-            </button></li>
-            <li><button class="button-circle button-water"><img src="{% static 'water_edit.jpg' %}" alt="water_edit">
-            </button></li>
-        </ul>
-    </div>
+
     <div>
         <p>The Five Elements - Wood, Earth, Water, Fire, and Metal - are believed to be the fundamental elements of everything in the universe between which interactions occur.</p>
     </div>
+
+    <div class="img__wrap">
+        <button class="button-circle button-wood"><img class="img__img" src="{% static 'wood_edit.jpg' %}" alt="wood_edit"></button>
+        <div class="img__description_layer">
+            <h4>WOOD</h4>
+            <p class="img__description">Weaken - Wood absorbs Water</p>
+            <p class="img__description">Destroy - Wood roots Earth</p>
+          </div>
+    </div>
+
+    <div class="img__wrap">
+        <button class="button-circle button-earth"><img class="img__img" src="{% static 'earth_edit.jpg' %}" alt="earth_edit"></button>
+        <div class="img__description_layer">
+            <h4>EARTH</h4>
+            <p class="img__description">Weaken - Earth cannot burn by Fire</p>
+            <p class="img__description">Destroy - Earth dams Water</p>
+          </div>
+    </div>
+
+    <div class="img__wrap">
+        <button class="button-circle button-water"><img class="img__img" src="{% static 'water_edit.jpg' %}" alt="water_edit"></button>
+        <div class="img__description_layer">
+            <h4>WATER</h4>
+            <p class="img__description">Weaken - Water rusts Metal</p>
+            <p class="img__description">Destroy - Water extinguishes Fire</p>
+          </div>
+    </div>
+
+    <div class="img__wrap">
+        <button class="button-circle button-fire"><img class="img__img" src="{% static 'fire_edit.jpg' %}" alt="fire_edit"></button>
+        <div class="img__description_layer">
+            <h4>FIRE</h4>
+            <p class="img__description">Weaken - Fire burns Wood</p>
+            <p class="img__description">Destroy - Fire melts Metal</p>
+          </div>
+    </div>
+
+    <div class="img__wrap">
+        <button class="button-circle button-metal"><img class="img__img" src="{% static 'metal_edit.jpg' %}" alt="metal_edit"></button>
+        <div class="img__description_layer">
+            <h4>METAL</h4>
+            <p class="img__description">Weaken - Metal excavates Earth</p>
+            <p class="img__description">Destroy - Metal cuts Wood</p>
+          </div>
+    </div>
+    
+    <div>
+        <p>The Elements are all connected. Each element both controls and is controlled by another element. The system is connected, moving, and constantly in a process of balance.</p>
+    </div>
+
+    <div>
+        <p>Will you weaken or will you control your oppenent?  </p>
+    </div>
+    
     <a href="{% url 'main' %}">Back</a>
 </body>
 </html>
