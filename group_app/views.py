@@ -70,6 +70,8 @@ def game_page(request):
     }
     return render(request, 'game_page.html', context)
 
+def about_page(request):
+    return render(request, 'about_page.html')
 
 def user_choice(request):
     list = ["Metal", "Earth", "Water", "Fire", "Wood"]

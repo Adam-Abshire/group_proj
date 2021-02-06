@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    height: 50px;
+}
+
+.button-circle {
+    border-radius: 50%;
+    /* border: 10px solid; */
+    height: 100px;
+    width: 100px;
+    /* box-shadow: inset black; */
+    background-color: #fffeff;
+}
+
+.button-wood {
+    border: 10px solid #077339;
+    padding: 10px;
+}
+
+.button-fire {
+    border: 10px solid #e24f24;
+}
+
+.button-earth {
+    border: 10px solid #ffaf13;
+}
+
+.button-metal {
+    border: 10px solid #625a4f;
+}
+
+.button-water {
+    border: 10px solid #1d5796;
+}

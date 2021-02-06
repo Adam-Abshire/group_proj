@@ -30,6 +30,7 @@
                 <nav class="nav nav-masthead justify-content-center">
                     <a class="nav-link active" href="{% url 'main' %}">Home</a>
                     <a class="nav-link " href="{% url 'game_page' %}">Game Page</a>
+                    <a class="nav-link " href="{% url 'about_page' %}">About Page</a>
                 </nav>
             </div>
         </header>
@@ -42,6 +43,9 @@
             <p class="lead">Gold: {{ user.gold }}</p>
             <p class="lead">
                 <a href="{% url 'game_page' %}" class="btn btn-lg btn-secondary">Go To Game Page</a>
+            </p>
+            <p class="lead">
+                <a href="{% url 'about_page' %}" class="btn btn-lg btn-secondary">About Page</a>
             </p>
             <p class="lead">
                 <a href="{% url 'logout' %}" class="btn btn-lg btn-secondary">Logout</a>
