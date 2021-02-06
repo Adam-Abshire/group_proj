@@ -8,34 +8,41 @@
     <link rel="stylesheet" href="{% static 'user_info.css' %}">
 </head>
 <body>
-    {% if user.avatar == Metal %}
-        <a href="{% static 'metal.png' %}"></a>
-    {% endif %}
-    {% if user.avatar.last == Water %}
-        <a href="{% static 'water.png' %}"></a>
-    {% endif %}
-    {% if user.avatar == Fire %}
-        <a href="{% static 'fire.png' %}"></a>
-    {% endif %}
-    {% if user.avatar == Wood %}
-        <a href="{% static 'wood.png' %}"></a>
-    {% endif %}
-    {% if user.avatar == Earth %}
-        <a href="{% static 'earth.png' %}"></a>
-    {% endif %}
-    <h1>{{ user.user_name }}</h1>
-    <h1>{{ user.avatar }}</h1>
-    <form action="/edit_user_avatar/{{user.id}}" method="POST">
-        {% csrf_token %}
-        <label for="avatar">Choose an Avatar</label>
-        <select name="avatar" id="avatar">
-            <option name="avatar" id="avatar" value="Metal">Metal</option>
-            <option name="avatar" id="avatar" value="Water">Water</option>
-            <option name="avatar" id="avatar" value="Fire">Fire</option>
-            <option name="avatar" id="avatar" value="Wood">Wood</option>
-            <option name="avatar" id="avatar" value="Earth">Earth</option>
-        </select>
-        <button type="submit">Change Avatar</button>
-    </form>
+    <div id="container">
+        <div id="left">
+            <h1>{{ user.user_name }}</h1>
+            <h2>{{ user.avatar }} Style</h2>
+            <form action="/edit_user_avatar/{{user.id}}" method="POST">
+                {% csrf_token %}
+                <label for="avatar"></label>
+                <select name="avatar" id="avatar">
+                    <option name="avatar" id="avatar" value="Metal">Metal</option>
+                    <option name="avatar" id="avatar" value="Water">Water</option>
+                    <option name="avatar" id="avatar" value="Fire">Fire</option>
+                    <option name="avatar" id="avatar" value="Wood">Wood</option>
+                    <option name="avatar" id="avatar" value="Earth">Earth</option>
+                </select>
+                <button type="submit">Change Avatar</button>
+            </form>
+            <a href="/main">Main Page</a>
+        </div>
+        <div id="right-{{user.avatar}}">
+            {% if user.avatar == metal %}
+                <img src="{% static 'metal2.png' %}" alt="">
+            {% endif %}
+            {% if user.avatar == water %}
+                <img src="{% static 'water.png' %}" alt="">
+            {% endif %}
+            {% if user.avatar == fire %}
+                <img src="{% static 'fire2.png' %}" alt="">
+            {% endif %}
+            {% if user.avatar == wood %}
+                <img src="{% static 'wood.png' %}" alt="">
+            {% endif %}
+            {% if user.avatar == earth %}
+                <img src="{% static 'earth.png' %}" alt="">
+            {% endif %}
+        </div>
+    </div>
 </body>
 </html>

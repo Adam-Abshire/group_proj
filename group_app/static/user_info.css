@@ -2,14 +2,88 @@
     padding: 0;
     margin: 0;
 }
-
-body {
+img {
+    width: 40%;
+    background: transparent;
+}
+#container {
+    display: flex;
+    justify-content: space-around;
+    padding: 3em;
+    align-items: center;
+}
+#right-Earth{
+    width: 60%;
+    margin: auto;
+    margin-top: 3em;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 2px solid black;
+    background-image: url("earth-back.jpg");
+    justify-content: flex-start;
+    padding: 2em 0;
 }
-
-img {
-    width: 25%;
+#right-Fire{
+    width: 60%;
+    margin: auto;
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    background-image: url("fire-back.jpg");
+    justify-content: flex-start;
+    padding: 2em 0;
 }
-
+#right-Water{
+    width: 60%;
+    margin: auto;
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    background-image: url("water-back.jpg");
+    justify-content: flex-start;
+    padding: 2em 0;
+}
+#right-Metal{
+    width: 60%;
+    margin: auto;
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    background-image: url("metal-back2.jpg");
+    justify-content: flex-start;
+    padding: 2em 0;
+}
+#right-Wood{
+    width: 60%;
+    margin: auto;
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    background-image: url("wood-back.jpg");
+    justify-content: flex-start;
+    padding: 2em 0;
+}
+#left {
+    width: 30%;
+    border: 2px solid black;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom right, white, darkblue);
+}
+button {
+    padding: .25em .5em;
+    border: 2px solid black;
+}
+select {
+    width: 30%;
+}
