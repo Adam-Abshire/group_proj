@@ -55,7 +55,7 @@ class User(models.Model):
     email = models.CharField(max_length=40)
     password = models.CharField(max_length=250)
     gold = models.IntegerField(default=1000)
-    avatar = models.CharField(max_length=12, default="metal")
+    avatar = models.CharField(max_length=12, default="Metal")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     objects = UserManager()
