@@ -3,8 +3,11 @@
     margin: 0;
 }
 img {
-    width: 40%;
+    height: 20em;
     background: transparent;
+}
+body {
+    background-image: url("background.jpg");
 }
 #container {
     display: flex;
@@ -33,6 +36,7 @@ img {
     align-items: center;
     border: 2px solid black;
     background-image: url("fire-back.jpg");
+    background-position: center;
     justify-content: flex-start;
     padding: 2em 0;
 }
@@ -57,6 +61,7 @@ img {
     align-items: center;
     border: 2px solid black;
     background-image: url("metal-back2.jpg");
+    background-position: center;
     justify-content: flex-start;
     padding: 2em 0;
 }

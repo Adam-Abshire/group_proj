@@ -39,10 +39,9 @@
         </header> -->
 
         <main role="main" class="inner cover">
-            <h1 class="cover-heading">Welcome to the Main Page</h1>
+            <h1 class="cover-heading">Battle of the Elements</h1>
             <p class="lead">{{ user.user_name }}</p>
-            <p class="lead">{{ user.email }}</p>
-            <p class="lead">{{ user.created_at|date:"M d, Y" }}</p>
+            <p class="lead">Member since: {{ user.created_at|date:"M d, Y" }}</p>
             <p class="lead">Gold: {{ user.gold }}</p>
             <p class="lead">
                 <a href="{% url 'game_page' %}" class="btn btn-lg btn-secondary">Go To Game Page</a>
