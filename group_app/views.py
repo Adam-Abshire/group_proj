@@ -25,6 +25,11 @@ def user_info(request, member_id):
     this_user = User.objects.get(id = member_id)
     context = {
         'user': this_user,
+        "metal": "Metal",
+        "water": "Water",
+        "earth": "Earth",
+        "fire": "Fire",
+        "wood": "Wood",
     }
     return render(request, 'user_info.html', context)
 
