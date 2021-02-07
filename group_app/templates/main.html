@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="en">
 
 <head>
@@ -13,18 +13,21 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
 
-    <!-- Bootstrap core CSS -->
+    Bootstrap core CSS
     <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    Custom styles for this template
 
     <link rel="stylesheet" href="{% static 'cover.css' %}">
 
 </head>
 
-<body class="text-center">
+<body class="text-center"> -->
+{% block header %}
+{% include "header.html" %}
+{% endblock %}    
 
-    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <!-- <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
             <div class="inner">
                 <nav class="nav nav-masthead justify-content-center">
@@ -33,7 +36,7 @@
                     <a class="nav-link " href="{% url 'about_page' %}">About Page</a>
                 </nav>
             </div>
-        </header>
+        </header> -->
 
         <main role="main" class="inner cover">
             <h1 class="cover-heading">Welcome to the Main Page</h1>
@@ -62,10 +65,12 @@
         </footer>
     </div>
 
-
+{% block footer %}
+{% include "footer.html" %}
+{% endblock %}
     <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Placed at the end of the document so the pages load faster
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>
         window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')
@@ -74,4 +79,4 @@
     <script src="../../dist/js/bootstrap.min.js"></script>
 </body>
 
-</html>
+</html> -->

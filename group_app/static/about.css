@@ -4,6 +4,7 @@
 }
 
 img {
+    height: 50px;
     height: 75px;
 }
 
@@ -33,53 +34,59 @@ img {
 .button-water {
     border: 10px solid #1d5796;
 }
-
-/* quick reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
   
 html {
-font-family: helvetica, arial, sans-serif;
+    font-family: helvetica, arial, sans-serif;
 }
 
 /* relevant styles */
+
+/* .main_image_wrap {
+    display: inline-block;
+} */
 .img__wrap {
-position: relative;
-height: 150px;
-width: 200px;
+    display: inline-block;
+    /* position: relative; */
+    height: 150px;
+    width: 200px;
 }
 
 .img__description_layer {
-position: absolute;
-top: 0;
-bottom: 0;
-left: 0;
-right: 0;
-background: rgba(36, 62, 206, 0.6);
-color: #fff;
-visibility: hidden;
-opacity: 0;
-display: flex;
-align-items: center;
-justify-content: center;
+/* position: absolute; */
+    margin-top: -140px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent; 
+    color: black;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 /* transition effect. not necessary */
-transition: opacity .2s, visibility .2s;
+    transition: opacity .2s, visibility .2s;
 }
 
 .img__wrap:hover .img__description_layer {
-visibility: visible;
-opacity: 1;
+    visibility: visible;
+    opacity: 1;
 }
 
 .img__description {
-transition: .2s;
-transform: translateY(1em);
+    transition: .2s;
+    transform: translateY(1em);    
+}
+
+.img__description h4 {
+    text-align: center;
+}
+
+.img__description p {
+    font-size: small;
 }
 
 .img__wrap:hover .img__description {
-transform: translateY(0);
+    transform: translateY(0);
 }
