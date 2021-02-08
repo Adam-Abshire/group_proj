@@ -25,13 +25,13 @@
                 <a href="/register">Don't Have an Account? Register</a>
             </div>
             <div id="main">
-                <div id="image">
+                <div id="image" class="flex-item">
                     <img src="{% static 'element.png' %}" alt="">
                 </div>
-                <div id="log">
+                <div id="log" class="flex-item">
                     <form action="/login_user" method="POST">
                         {% csrf_token %}
-                        <h1>Log In</h1>
+                        <h1>Continue Your Journey</h1>
                         <div class="line">
                             <label for="">Email Address</label>
                             <input type="text" name="email">
