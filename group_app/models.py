@@ -14,7 +14,7 @@ class UserManager(models.Manager):
         if postData['user_name'] in all_users_names:
             errors['user_name'] = "User Name Has Been Taken"
         if len(postData['user_name']) < 2:
-            errors['user_name'] = "First Name must contain 2 characters"
+            errors['user_name'] = "User Name must contain 2 characters"
         if len(postData['pword']) < 8:
             errors['pword'] = "Password must contain 8 characters"
         if postData['pword'] != postData['pword_confirm']:
@@ -28,7 +28,7 @@ class UserManager(models.Manager):
     def editval(self, postData):
         errors = {}
         if len(postData['user_name']) < 2:
-            errors['user_name'] = "First Name must contain 2 characters"
+            errors['user_name'] = "User Name must contain 2 characters"
         EMAIL_REGEX = re.compile(
             r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
         if not EMAIL_REGEX.match(postData['email']):
